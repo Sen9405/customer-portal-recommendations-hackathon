@@ -56,6 +56,14 @@ def exercise(data):
                     run.click()
                 expect(page.locator('.recommendation .customer-reason').first).to_contain_text('категории вашей задачи')
                 assert page.locator('.recommendation h3').all_text_contents() != before
+            else:
+                page.route('**/api/cold-start-agent', lambda r: r.fulfill(json={'status': 'availability_unknown', 'trace': []}))
+                page.locator('#profile-title').click()
+                page.locator('input[value=refusal]').check()
+                page.locator('#run-selection').click()
+                expect(page.locator('#agent-result')).to_contain_text('актуальность каталога не подтверждена')
+                expect(page.locator('#explanation')).to_be_hidden()
+                expect(page.locator('#run-selection')).to_be_enabled()
             for word in ('Исторический топ', 'ДИАГНОСТИКА НЕ ПРОВЕРЕНА', 'Кандидатов нет', 'co-purchase', 'выдача заблокирована'):
                 assert word not in page.locator('main').text_content()
             assert page.locator('script[data-injected]').count()==0
@@ -97,12 +105,14 @@ def test_public_research_cache_is_scoped_and_expires(monkeypatch):
         now += 3600
         assert server.get_public_result(key) is None
 
+@pytest.mark.skipif(not (app.ROOT/'data/dataset_v5.xlsx').is_file(), reason='Requires organizer v5 workbook')
 def test_real_data_browser_smoke():
     try:
         data=app.load_data(); assert len(data.options)>5; exercise(data)
     except Exception:
         pytest.fail('Real-data browser smoke failed; details suppressed for privacy',pytrace=False)
 
+@pytest.mark.skipif(not (app.ROOT/'data/dataset_v5.xlsx').is_file(), reason='Requires organizer v5 workbook')
 def test_real_data_http_methods_match_official_train():
     server = None
     thread = None

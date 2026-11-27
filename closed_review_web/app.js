@@ -210,9 +210,13 @@ async function investigateCold(goal, request, candidates) {
   if (request !== revision) return;
   if (r.status === 'research_rate_limited') { showAgentUnavailable(true); return; }
   if (r.status === 'research_unavailable') { showAgentUnavailable(); return; }
+  if (r.status === 'availability_unknown') {
+    agentNote('Проверка не запущена: актуальность каталога не подтверждена.');
+    return;
+  }
   const steps = r.trace.map(s => s.step === 'chosen' ? `Модель выбрала источник: ${s.label}.` : s.step === 'read' ? 'Сервис прочитал страницу производителя.' : 'Модель выбрала цитату, а сервис сверил её с документом.');
   const rejected = r.status === 'documented_refusal';
-  agentNote(rejected ? 'Модель не предложила покупать модуль отдельно: производитель прямо пишет, что отдельно он не продаётся.' : r.offer ? 'Модель нашла подтверждение в документации. Сервис сверил предложение с каталогом и поставил его первым.' : 'Не удалось подтвердить подходящее предложение. Источник показываем в графе, если удалось его проверить.', steps, r.cached);
+  agentNote(rejected ? 'Модель не предложила покупать модуль отдельно: производитель прямо пишет, что отдельно он не продаётся.' : r.offer ? 'Модель нашла подтверждение в документации. Сервис сверил предложение с каталогом и поставил его первым.' : r.source ? 'Назначение подтверждено документацией, но подходящего предложения в каталоге не найдено. Источник указан в графе.' : 'Не удалось подтвердить подходящее предложение по документации.', steps, r.cached);
   if (rejected) {
     list.replaceChildren(element('p', 'empty', 'Отдельно модуль не продаётся. Если он вам нужен, рассмотрите конфигурацию nanoCAD, в которую он входит.'));
     byId('recommendation-count').textContent = '';

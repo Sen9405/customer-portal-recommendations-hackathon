@@ -10,6 +10,7 @@ CATALOG = ROOT / 'data/catalog-20261126.sqlite'
 ARTIFACT = ROOT / 'sources/public_catalog_kaspersky_edr_20261126.json'
 
 
+@unittest.skipUnless(ARTIFACT.is_file(), 'Requires the local evidence snapshot')
 class KasperskyPublicEvidenceTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

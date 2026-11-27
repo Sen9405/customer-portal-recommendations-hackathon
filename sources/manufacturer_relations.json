@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "scope": "Public manufacturer documentation only; product-family relations, not catalog matches, SKU or license verification. No archived point-in-time snapshots verified.",
+  "relations": [
+    {
+      "id": "kaspersky-ksc14-endpoint-windows",
+      "subject": "Kaspersky Security Center 14",
+      "object": "Kaspersky Endpoint Security for Windows",
+      "relation_type": "centralized_management",
+      "url": "https://support.kaspersky.com/ksc/14.0/172903",
+      "observed_at": "2026-11-26T11:22:35Z",
+      "page_updated": "2025-04-21",
+      "source_version": "Kaspersky Security Center 14.0 documentation",
+      "excerpt": "Kaspersky Security Center supports centralized deployment and management of all Kaspersky applications and solutions that are currently supported.",
+      "permitted_claim": "Kaspersky Security Center 14 documentation lists Kaspersky Endpoint Security for Windows among supported applications for centralized deployment and management, subject to current product support.",
+      "caveats": "The listed product appears in the article's supported-applications table. Application versions depend on the product support lifecycle; the current page is not a historical snapshot. No specific SKU, license, edition or entitlement is established.",
+      "historical_snapshot_verified_at": null
+    },
+    {
+      "id": "veeam-one13-backup-monitoring",
+      "subject": "Veeam ONE 13",
+      "object": "Veeam Backup & Replication",
+      "relation_type": "monitoring",
+      "url": "https://helpcenter.veeam.com/docs/one/userguide/backup_monitoring.html?ver=13",
+      "observed_at": "2026-11-26T11:22:35Z",
+      "page_updated": "2026-10-23",
+      "source_version": "Veeam ONE 13 build 13.1.0.7940",
+      "excerpt": "Veeam ONE Client offers advanced functionality for monitoring Veeam Backup & Replication infrastructure and data protection operations in the managed virtual environment.",
+      "permitted_claim": "Veeam ONE 13 build 13.1.0.7940 documentation describes monitoring Veeam Backup & Replication infrastructure and data protection operations.",
+      "caveats": "Monitoring requires configured connections to Veeam Backup & Replication servers. The page update postdates the 2026-08-31 cutoff. No specific Backup & Replication version pairing, SKU, license or entitlement is established.",
+      "historical_snapshot_verified_at": null
+    },
+    {
+      "id": "veeam-backup13-vsphere",
+      "subject": "Veeam Backup & Replication 13",
+      "object": "VMware vSphere",
+      "relation_type": "data_protection",
+      "url": "https://helpcenter.veeam.com/docs/vbr/userguide/vmware_vsphere.html?ver=13",
+      "observed_at": "2026-11-26T11:22:35Z",
+      "page_updated": "2026-11-19",
+      "source_version": "Veeam Backup & Replication 13 build 13.1.2.57",
+      "excerpt": "Veeam Backup & Replication offers various data protection and disaster recovery features for the VMware vSphere environment.",
+      "permitted_claim": "Veeam Backup & Replication 13 build 13.1.2.57 documentation describes data protection and disaster recovery features for VMware vSphere environments.",
+      "caveats": "Specific VMware versions, configurations and feature requirements need separate verification. The page update postdates the 2026-08-31 cutoff. No specific SKU, license or entitlement is established.",
+      "historical_snapshot_verified_at": null
+    }
+  ]
+}

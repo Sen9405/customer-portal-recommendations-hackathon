@@ -8,6 +8,7 @@ ARTIFACT = ROOT / 'sources/public_catalog_redsoft_usergate_20261126.json'
 SNAPSHOT = ROOT / 'data/catalog-20261126.sqlite'
 
 
+@unittest.skipUnless(ARTIFACT.is_file(), 'Requires the local evidence snapshot')
 class PublicEvidenceTest(unittest.TestCase):
     def test_relations_are_conditional_and_linked(self):
         data = json.loads(ARTIFACT.read_text(encoding='utf-8'))

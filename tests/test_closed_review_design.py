@@ -1,13 +1,13 @@
 import os
 import threading
-from pathlib import Path
+
 
 from playwright.sync_api import sync_playwright
 import closed_review_server as app
 from test_closed_review_server import fixture
 
 
-def test_design_desktop_mobile_and_evidence():
+def test_design_desktop_mobile_and_evidence(tmp_path):
     data = fixture()
     original = data.review
     def review(handle, platform=None):
@@ -55,7 +55,7 @@ def test_design_desktop_mobile_and_evidence():
                 assert 'Проверяемая цитата' in detail.inner_text()
                 assert page.locator('script[data-injected]').count() == 0
                 page.locator('#recommendations').scroll_into_view_if_needed()
-                path = Path(os.environ.get('TMPDIR', '/home/sen/.hermes/cache/scratch')) / f'closed-review-design-{label}.png'
+                path = tmp_path / f'closed-review-design-{label}.png'
                 page.screenshot(path=str(path), full_page=True)
                 os.chmod(path, 0o600)
                 assert not errors

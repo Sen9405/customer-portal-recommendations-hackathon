@@ -10,6 +10,7 @@ ARTIFACT = ROOT / "sources/public_catalog_pair_evidence_20261126.json"
 CATALOG = ROOT / "data/catalog-20261126.sqlite"
 
 
+@unittest.skipUnless(ARTIFACT.is_file(), 'Requires the local evidence snapshot')
 class PublicPairEvidenceTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

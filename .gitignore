@@ -1,0 +1,20 @@
+# Локальные материалы и исходные данные заказчика
+/HANDOFF.md
+/preparation/
+/data/
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+*.key
+*.pem
+*.sqlite*
+*.db
+*.xlsx
+*.zip
+*.log

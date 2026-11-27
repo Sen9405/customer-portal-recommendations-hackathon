@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Рабочий стол — рекомендации</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">К содержимому</a>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="#main"><span class="brand-mark" aria-hidden="true">✳</span><span>Клиентский<br>кабинет</span></a>
+    <div class="sidebar-label">ДЕМО-КАБИНЕТ / 01</div>
+    <nav aria-label="Навигация по странице"><a class="nav-active" href="#main" aria-current="page">↗ &nbsp; Рабочий стол</a><a href="#products">▤ &nbsp; Продукты клиента</a><a href="#recommendations">◇ &nbsp; Рекомендации</a><a href="#explanation">⌁ &nbsp; Как это работает</a><a href="#public-example">↗ &nbsp; Публичный пример</a></nav>
+    <div class="side-note"><span>НА ЗАМЕТКУ</span><p>Хорошая рекомендация начинается с понятной причины.</p><div class="side-line"></div><small>Демонстрационный стенд<br>Без подключения к данным</small></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><strong>Рабочий стол менеджера</strong><span>Клиентский портал / демонстрация</span><span class="top-right">Личный кабинет &nbsp; ◉</span></header>
+    <main id="main">
+      <div class="demo-notice"><strong>ДЕМО · СИНТЕТИЧЕСКИЕ ДАННЫЕ</strong><span>В подборке клиенты, продукты, связи и проверка наличия вымышлены. Отдельный справочный пример ниже основан на публичных источниках.</span></div>
+      <div class="intro"><div><div class="eyebrow">РАБОЧИЙ СТОЛ <span>/</span> ПОДБОР РЕШЕНИЙ</div><h1>РЕКОМЕНДАЦИИ<br><em>С ОБЪЯСНЕНИЕМ</em><i aria-hidden="true"></i></h1><p>Посмотрите, как продукты клиента связаны с подходящими предложениями.</p></div><div class="stamp" aria-hidden="true">ПОНЯТНАЯ<br><b>ПРИЧИНА</b><br>ДЛЯ КАЖДОГО</div></div>
+      <section class="profile" aria-labelledby="profile-title"><div><div class="eyebrow">01 / ВЫБЕРИТЕ СЦЕНАРИЙ</div><h2 id="profile-title">Кто перед нами?</h2><p>Смените профиль, чтобы увидеть другой набор продуктов и рекомендаций.</p></div><fieldset class="choices"><legend>Синтетический сценарий</legend><label><input type="radio" name="profile" value="b2b" checked><span><b>B2B</b><small>Компания</small></span></label><label><input type="radio" name="profile" value="b2c"><span><b>B2C</b><small>Частный клиент</small></span></label><label><input type="radio" name="profile" value="cold"><span><b>Холодный старт</b><small>Без истории</small></span></label><label><input type="radio" name="profile" value="partial"><span><b>Меньше трёх</b><small>Ограничено наличие</small></span></label><label><input type="radio" name="profile" value="incomplete"><span><b>История не подтверждена</b><small>Выдача заблокирована</small></span></label><label><input type="radio" name="profile" value="unresolved"><span><b>Товар не опознан</b><small>Выдача заблокирована</small></span></label></fieldset></section>
+      <div class="content-grid"><section class="products paper" id="products" aria-labelledby="products-title"><div class="section-heading"><div><div class="eyebrow">02 / ПРОФИЛЬ КЛИЕНТА</div><h2 id="products-title">Продукты клиента</h2></div><span class="count" id="product-count"></span></div><p class="section-sub" id="profile-description"></p><div id="product-list"></div></section>
+      <section class="recommendations" id="recommendations" aria-labelledby="recommendations-title"><div class="section-heading"><div><div class="eyebrow">03 / ПОДБОРКА</div><h2 id="recommendations-title">Вам может подойти</h2></div><span class="count" id="recommendation-count">—</span></div><div id="recommendation-list" aria-live="polite"></div></section></div>
+      <section class="method" id="explanation"><div><div class="eyebrow">ПРОЗРАЧНАЯ ЛОГИКА</div><h2>От факта — к предложению.</h2></div><p>Подбор рассчитывается алгоритмом на вымышленных данных. Сходство или совместная покупка не доказывают совместимость; наличие также имитируется.</p><span aria-hidden="true">↗</span></section>
+      <section class="public-example paper" id="public-example" aria-labelledby="public-example-title">
+        <div class="eyebrow">ОТДЕЛЬНО ОТ СИНТЕТИЧЕСКОЙ ПОДБОРКИ / ПУБЛИЧНЫЕ ИСТОЧНИКИ</div>
+        <h2 id="public-example-title">Публичный пример Kaspersky: документация продуктов</h2>
+        <p><strong>Это справочный пример, не рекомендация и не подтверждение лицензий.</strong> Связь не используется Hybrid и не относится к вымышленному клиенту или результатам выше.</p>
+        <p>Kaspersky документирует поддержку Kaspersky Endpoint Security for Windows версий 11.7.0–12.10 для Endpoint Detection and Response Optimum 4.0. В том числе рассмотрена пара <strong>Windows 12.10 и EDR Optimum 4.0</strong>. Активация EDR требует лицензии с соответствующей функциональностью; документация описывает и отдельную лицензию в дополнение к EPP.</p>
+        <h3>Что необходимо проверить</h3>
+        <ul>
+          <li>Права на версии и компоненты, право на дополнение и условия конкретных лицензий не подтверждены. EDR может уже входить в комплект — проверьте перед повторной покупкой у поставщика и производителя.</li>
+          <li>Нужны поддерживаемый Security Center Windows 13.2+ или Linux 15.1+ либо Cloud Console, необходимые плагины, включённый компонент и соблюдение остальных системных требований. Компоненты EDR Optimum, Expert и EDR (KATA) несовместимы между собой.</li>
+          <li>Для публичной карточки Endpoint Security артикул в заголовке и каталоге <strong>KL4867RAKFS</strong>, а в URL и части описания <strong>KL4867LAKFS</strong>. Расхождение должен разрешить продавец; принадлежность версий и прав к точным SKU не доказана.</li>
+          <li>Карточки описывали лицензии на 12 месяцев для Windows и 10–14 узлов; уточните количество, право покупки и договорные условия. Для EDR-карточки неизвестно, является ли предложение дополнением или уже включает EPP.</li>
+          <li>В снимке каталога обе позиции были отмечены доступными, но текущая доступность неизвестна, как и цена; live-проверка не выполняется. Это не исторический снимок для бэктеста.</li>
+        </ul>
+        <p>Источники получены/зафиксированы 26.11.2026 в 13:03:35 UTC; фид получен 26.11.2026 в 11:28 UTC. Таблица жизненного цикла на дату проверки указывала полную поддержку обеих версий; текущий статус необходимо перепроверить. Внешние ссылки открываются в новой вкладке; автоматических запросов к ним нет.</p>
+        <h3>Публичные источники</h3>
+        <ul class="public-sources">
+          <li>Фид каталога, снимок от 26.11.2026: <a href="https://store.softline.ru/feeds/Mindbox.yml.gz" target="_blank" rel="noopener noreferrer">https://store.softline.ru/feeds/Mindbox.yml.gz</a></li>
+          <li>Карточка Endpoint Security: <a href="https://store.softline.ru/kaspersky/kl4867lakfs-4853/" target="_blank" rel="noopener noreferrer">https://store.softline.ru/kaspersky/kl4867lakfs-4853/</a></li>
+          <li>Карточка EDR: <a href="https://store.softline.ru/kaspersky/kl4708rakfs-298271/" target="_blank" rel="noopener noreferrer">https://store.softline.ru/kaspersky/kl4708rakfs-298271/</a></li>
+          <li>Требования EDR 4.0, обновлено 20.11.2026: <a href="https://support.kaspersky.com/help/KEDR_Optimum/4.0/en-US/216855.htm" target="_blank" rel="noopener noreferrer">https://support.kaspersky.com/help/KEDR_Optimum/4.0/en-US/216855.htm</a></li>
+          <li>Активация EDR 4.0, обновлено 20.11.2026: <a href="https://support.kaspersky.com/kedr-optimum/4.0/216930" target="_blank" rel="noopener noreferrer">https://support.kaspersky.com/kedr-optimum/4.0/216930</a></li>
+          <li>Интеграция Windows 12.10, обновлено 14.11.2026: <a href="https://support.kaspersky.com/KESWin/12.10/en-US/225086.htm" target="_blank" rel="noopener noreferrer">https://support.kaspersky.com/KESWin/12.10/en-US/225086.htm</a></li>
+          <li>Жизненный цикл, дата обновления страницы не указана: <a href="https://support.kaspersky.com/corporate/lifecycle" target="_blank" rel="noopener noreferrer">https://support.kaspersky.com/corporate/lifecycle</a></li>
+        </ul>
+      </section>
+      <footer>ДЕМО-СТЕНД &nbsp; / &nbsp; ПОДБОРКИ УСЛОВНЫЕ <span>СДЕЛАНО ДЛЯ ЗНАКОМСТВА С ИДЕЕЙ</span></footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

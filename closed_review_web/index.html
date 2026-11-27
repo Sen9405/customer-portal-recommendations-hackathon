@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="local-token" content="__LOCAL_TOKEN__">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Личный кабинет клиента</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/contest.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">К содержимому</a>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="#main"><span class="brand-mark" aria-hidden="true">✳</span><span>Личный кабинет</span></a>
+    <nav aria-label="Навигация по странице"><a class="nav-active" href="#main" aria-current="page">↗ &nbsp; Главная</a><a href="#recommendations">◇ &nbsp; Рекомендации</a><a href="#products">▤ &nbsp; История покупок</a><a href="#explanation" hidden>Граф связей</a><a href="#historical-results" hidden>Оценка качества</a></nav>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><strong>Демонстрация</strong><span>Закрытый просмотр</span></header>
+    <main id="main">
+      <header class="intro"><h1>Личный кабинет клиента</h1><p>Рекомендации, история покупок и причины, по которым товары попали в подборку.</p></header>
+      <details class="profile"><summary id="profile-title">Демо-профили</summary><div><fieldset class="choices" id="history-choices"><legend>Выберите сценарий</legend></fieldset></div></details>
+      <div class="content-grid">
+        <section class="recommendations" id="recommendations" aria-labelledby="recommendations-title">
+          <div class="section-heading"><h2 id="recommendations-title">Рекомендации для вас</h2><span class="count" id="recommendation-count"></span></div>
+          <div id="cold-filters" hidden><label for="cold-goal">Ваша задача</label> <select id="cold-goal"><option value="">Задача пока не указана</option><option value="security">Защита</option><option value="backup">Резервное копирование</option><option value="office">Офисное ПО</option><option value="mechanical">Машиностроительные чертежи и 3D-модели</option><option value="standalone">Купить модуль «Механика» отдельно</option></select></div>
+          <details class="platform-filter" id="platform-filter" hidden><summary>Уточнить платформу</summary><label for="platform">Тип процессора:</label> <select id="platform"><option value="">Не указан</option><option value="x86-64">Intel / AMD (x86-64)</option><option value="armv8">ARMv8</option><option value="elbrus">Эльбрус</option></select><p>Если выбрать платформу, останутся только товары, для которых она указана в каталоге.</p></details>
+          <button class="pick-button" id="run-selection" type="button" disabled>Подобрать рекомендации</button>
+          <div id="recommendation-list" aria-live="polite"></div>
+          <div id="agent-result" aria-live="polite"></div>
+        </section>
+        <section class="products paper" id="products" aria-labelledby="products-title"><div class="section-heading"><h2 id="products-title">История покупок</h2><span class="count" id="product-count"></span></div><div id="product-list"></div></section>
+      </div>
+      <section class="products paper historical-report" id="explanation" aria-labelledby="graph-title" hidden>
+        <h2 id="graph-title">Обоснование рекомендаций</h2>
+        <p>Слева — ваша покупка или задача, справа — товар. Под каждой связью указано, на чём она основана.</p>
+        <div id="graph"></div>
+      </section>
+      <section class="products paper historical-report" id="historical-results" aria-labelledby="historical-title" hidden>
+        <h2 id="historical-title">Как оценили качество рекомендаций</h2>
+        <p><strong>Precision@3</strong> — доля из трёх рекомендаций, которые совпали с последующими покупками. Например, одно совпадение из трёх — это 33,3%. Все методы оценивали на одних и тех же клиентах: подбирали товары по ранним покупкам и сравнивали их с более поздними.</p>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Метод</th><th scope="col">A · 337 клиентов</th><th scope="col">B · 172 клиента</th></tr></thead><tbody>
+          <tr><th scope="row">Наш подбор по истории покупок</th><td><strong>9,20%</strong></td><td><strong>11,82%</strong></td></tr>
+          <tr><th scope="row">Baseline: популярность</th><td>5,44%</td><td>7,36%</td></tr>
+          <tr><th scope="row">Baseline: совместные покупки</th><td>5,64%</td><td>6,01%</td></tr>
+        </tbody></table></div>
+        <p>Группа B — клиенты из группы A с одним купленным товаром в истории. Среди частных покупателей метод популярности оказался точнее.</p>
+        <p><strong>Хотя бы одну рекомендацию</strong> в обеих группах получили 100% клиентов у нашего метода и метода популярности. У метода совместных покупок — 92,28% в A и 87,21% в B.</p>
+        <p>Это проверка на уже изученном периоде продаж. Снимка каталога на тот период нет, поэтому цифры не измеряют точность подборки на экране или вклад ИИ.</p>
+      </section>
+      <footer>ЗАКРЫТАЯ ДЕМОНСТРАЦИЯ</footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

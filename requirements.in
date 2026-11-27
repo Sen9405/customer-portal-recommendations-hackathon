@@ -1,0 +1,2 @@
+# Closed review runtime; the synthetic demo itself only uses the standard library.
+openpyxl==3.1.5

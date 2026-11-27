@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "public_evidence_candidate_not_human_reviewed",
+  "purpose": "A renewal lead for a human or eligibility-checking workflow, not an approved recommendation or reviewed provenance_links mapping.",
+  "observed_at": "2026-11-26T11:41:23Z",
+  "relation_type": "potential_license_renewal",
+  "family": "Kaspersky Endpoint Security Cloud",
+  "manufacturer_evidence": {
+    "url": "https://support.kaspersky.com/Cloud/1.0/en-US/159899.htm",
+    "document": "Renewing the software license, article ID 159899",
+    "page_updated": "2026-08-21",
+    "excerpts": [
+      "From Kaspersky Business Hub, you can renew licenses for Kaspersky Endpoint Security Cloud.",
+      "You can renew a license online if fewer than 30 days remain before the license expiration date and only if the license was purchased on the Kaspersky website. To renew other licenses, you must contact a partner company of Kaspersky.",
+      "You cannot renew a Kaspersky Endpoint Security Cloud license that was purchased before version 8.0 was released (that is, before April 2019)."
+    ]
+  },
+  "catalog_source": "https://store.softline.ru/feeds/Mindbox.yml.gz",
+  "catalog_snapshot_retrieved_at": "2026-11-26T11:28:10.920224+00:00",
+  "offers": [
+    {
+      "role": "existing_license_reference",
+      "offer_id": "222172",
+      "sku": "KL4742RAMFS",
+      "url": "https://store.softline.ru/kaspersky/kl4742ramfs-222172/",
+      "page_title_excerpt": "Kaspersky Endpoint Security Cloud лицензия на 1 год по количеству рабочих станций/файловых серверов",
+      "page_type_excerpt": "Тип лицензии: полная версия"
+    },
+    {
+      "role": "potential_renewal_offer",
+      "offer_id": "222180",
+      "sku": "KL4742RAMFR",
+      "url": "https://store.softline.ru/kaspersky/kl4742ramfr-222180/",
+      "page_title_excerpt": "Kaspersky Endpoint Security Cloud продление на 1 год по количеству рабочих станций/файловых серверов",
+      "page_type_excerpt": "Тип лицензии: продление"
+    }
+  ],
+  "limitations": [
+    "The manufacturer describes family-level renewal, not these specific Softline SKUs or this specific pair. Similar SKU stems do not establish matching license tiers or entitlements.",
+    "Before any customer-facing recommendation, verify the actual license certificate, product and edition, license purchase date, customer eligibility, renewal terms, seat band and duration with the vendor or authorized partner. The article excludes pre-April-2019 Cloud licenses; its online purchase conditions do not establish Softline eligibility.",
+    "These are public catalog offer identities only, not private dataset items; no linkage to a customer or private SKU is established.",
+    "The current feed and live pages are not a historical snapshot. No historical backtest eligibility, present availability or price is established.",
+    "No human reviewer has attested these mappings; this record must not be supplied as a verified mapping to recommendation.provenance_links.build_graph."
+  ]
+}

@@ -1,5 +1,7 @@
 # Changelog
 
+- Corrected the v5 Precision@3 display for the sales-only 2+1 ranker and clarified that the benchmark excludes catalog filtering and AI.
+
 - Чистый checkout запускает полный набор тестов и явно пропускает только проверки, требующие отсутствующих локальных материалов или инструментов; GitHub CI запускает полный pytest с Chromium без закрытых данных.
 - В кабинете отдельно показаны пропуск ИИ-проверки из-за неактуального каталога и отсутствие подходящей позиции при подтверждённом назначении. Логика подбора не менялась.
 
